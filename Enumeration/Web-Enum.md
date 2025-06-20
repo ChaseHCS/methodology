@@ -23,6 +23,14 @@ From our output we can determine things like,
 - Code being used
 - Type of site (CMS, blog, etc...)
 
-The information gathered here will help us in the future.
+Lastly, there is some misc. things we should always be trying.
+- Check robots.txt
+- Check for .git files
+
+It is crucial we gather as much information as possible in this step so we don't waste anytime looking for something that was right in front of us the whole time.
 
 #### Directory Bruteforcing
+
+After initial fingerprinting we need to make sure we bruteforce almost every possible subdirectory on the site to find any hidden content.
+
+There are several tools you can utilize to achieve this, all with their own pros and cons.
