@@ -1,12 +1,10 @@
 # Web Enumeration
-The following is my methodology for website enumeration. 
+The following is my methodology for website enumeration. It is important to fingerprint the site to get a picture of what kind of website you are dealing with **AND** to find the potential attack vectors.
 
+## Fingerprinting
+First, we will do basic fingerprinting to get an inital understanding of the site. Specfically, it is good to look at http headers on the code on the site.
 
-## Information Gathering
-It is important to fingerprint the site to get a picture of what kind of website you are dealing with **AND** to find the potential attack vectors.
-
-#### Fingerprinting
-First it is good to look at http headers on the code on the site.
+#### Curl
 
 ```bash
 curl http://deeznuts.htb/AnyJuicySubDirectories
@@ -29,8 +27,15 @@ Lastly, there is some misc. things we should always be trying.
 
 It is crucial we gather as much information as possible in this step so we don't waste anytime looking for something that was right in front of us the whole time.
 
-#### Directory Bruteforcing
+## Directory Bruteforcing
 
 After initial fingerprinting we need to make sure we bruteforce almost every possible subdirectory on the site to find any hidden content.
 
 There are several tools you can utilize to achieve this, all with their own pros and cons.
+
+#### Feroxbuster
+`Rust` is epic... This scanner utilizes rust to make for an ultra fast directory brute forcer. The only cons are that the output is weird and sometimes it misses things. Still my *go-to*. Example usage looks like this,
+
+```bash
+feroxbuster
+```
