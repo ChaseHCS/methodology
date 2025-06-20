@@ -52,8 +52,12 @@ The syntax of this cmd is as follows. `-u` specifies url.`--auto-bail` will auto
 
 #### Gobuster
 Lorem
-#### FFuF
+
+#### ffuf
+Lorem
 
 ## Subdomain Brute Forcing
+If we find a vald Domain we also want to try subdomain brute forcing. Whenever you see `port 53` open you want to try this. Can lead to lots of juicy sites.
 
 ## VHost Fuzzing
+I will be back, need to do more research.
