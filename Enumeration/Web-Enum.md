@@ -22,6 +22,7 @@ From our output we can determine things like,
 - Webserver being used
 - Code being used
 - Type of site (CMS, blog, etc...)
+
 The information gathered here will help us in the future.
 
 #### Directory Bruteforcing
