@@ -1,5 +1,13 @@
 # Web Enumeration
 The following is my methodology for website enumeration. It is important to fingerprint the site to get a picture of what kind of website you are dealing with **AND** to find the potential attack vectors.
+#### Here is what we are looking for
+- Login pages
+- Deprecated technologies being used
+- Cleartext credentials
+- Input fields
+- Hidden directories
+
+There are ofc many more attack vectores then these but as a baseline this is what to look out for.
 
 ## Fingerprinting
 First, we will do basic fingerprinting to get an inital understanding of the site. Specfically, it is good to look at http headers on the code on the site.
