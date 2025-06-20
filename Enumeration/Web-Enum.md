@@ -6,6 +6,7 @@ The following is my methodology for website enumeration. It is important to fing
 - Cleartext credentials
 - Input fields
 - Hidden directories
+- IDOR
 
 There are ofc many more attack vectores then these but as a baseline this is what to look out for.
 
