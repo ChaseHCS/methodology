@@ -46,5 +46,14 @@ There are several tools you can utilize to achieve this, all with their own pros
 `Rust` is epic... This scanner utilizes rust to make for an ultra fast directory brute forcer. The only cons are that the output is weird and sometimes it misses things. Still my *go-to*. Example usage looks like this,
 
 ```bash
-feroxbuster
+feroxbuster -u http://box.htb --auto-bail -d 0 -E -w /usr/SecLists/top-1-million.txt -o ferox.scan
 ```
+The syntax of this cmd is as follows. `-u` specifies url.`--auto-bail` will automatically quit the scan if it recieves too many errors. `-d` specifies the depth (0 = infinite depth). `-E` will output file extensions. If you find file extensions, rerun the scan with `-x php txt docx` instead of `-E` to bruteforce the specific extensions.`-w` tells ferox which wordlist to use. `-o` specifies output. There is plenty of other awesome flags that you can find on their documentation on github but these are the ones I commonly use.
+
+#### Gobuster
+Lorem
+#### FFuF
+
+## Subdomain Brute Forcing
+
+## VHost Fuzzing
