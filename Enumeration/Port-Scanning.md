@@ -34,3 +34,4 @@ rustscan -a box.htb -- -A -sCV box.htb -oN box.scan
 The syntax works like this, `rustscan -a box.htb` scans all ports in seconds. Then, `--` tells rustscan to pass all cmds after it to nmap **ONLY** using the ports it found open. So the end of the command `-A -sCV box.htb -oN box.scan` is all for the nmap.
 
 #### Netcat
+Netcat is another tool like `nmap` where you might not use it as your *go-to* but, it is essential for you to understand how to use it. Netcat is primiarily used in situation where you on a restricted shell or where heavy scanners are being blocked. It blends in with common network activity. Not really useful on CTFs but useful in real world engagements.
