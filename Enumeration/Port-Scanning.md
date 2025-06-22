@@ -25,7 +25,7 @@ You might not use `nmap` as your goto but it is important to know how to use it.
 
 Rustscan is the fastest portscanner out there right now. Always being updated, plenty of utility. The *best* portscanner out rn IMO. It is not nativeley installed on Kali so you will have to install it. The following command does the `Nmap` two-liner above but in one command and way faster.
 ```bash
-rustscan -a box.htb -- -A -sCV box.htb -oN box.scan
+rustscan -a box.htb -- -A -sCV -oN box.scan
 ```
 The syntax works like this, `rustscan -a box.htb` scans all ports in seconds. Then, `--` tells rustscan to pass all cmds after it to nmap **ONLY** using the ports it found open. So the end of the command `-A -sCV box.htb -oN box.scan` is all for the nmap.
 
