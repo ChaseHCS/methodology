@@ -50,6 +50,8 @@ feroxbuster -u http://box.htb --auto-bail -d 0 -E -w /usr/SecLists/top-1-million
 ```
 The syntax of this cmd is as follows. `-u` specifies url.`--auto-bail` will automatically quit the scan if it recieves too many errors. `-d` specifies the depth (0 = infinite depth). `-E` will output file extensions. If you find file extensions, rerun the scan with `-x php txt docx` instead of `-E` to bruteforce the specific extensions.`-w` tells ferox which wordlist to use. `-o` specifies output. There is plenty of other awesome flags that you can find on their documentation on github but these are the ones I commonly use.
 
+It is extremely important to be thorough with this step. Try different wordlists, different file extensions, and try them multiple times with different tools. You could literally fail OSCP for simply not bruting the correct wordlist.
+
 #### Gobuster
 Lorem
 
