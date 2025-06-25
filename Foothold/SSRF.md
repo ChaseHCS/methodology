@@ -15,7 +15,7 @@ If you find these fields are  vulnerable there a couple things you should try to
 
 ## Fuzzing local ports
 
-The following command will fuzz all ports
+The following command will fuzz all ports:
 ```bash
-ffuf -u http://editorial.htb/upload-cover -request ssrf.request -w <( seq 0 65535) -ac
+ffuf -u http://<box.htb>/<Wherever the HTTP request posts too> -request ssrf.request -w <( seq 0 65535) -ac
 ```
