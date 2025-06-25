@@ -9,7 +9,7 @@ SSRF can commonly be found in input fields. Try inputting these payloads to see 
 - `http://127.0.0.1/etc/passwd`
 - `http://<yourip>/test`
 
-If you find these fields are  vulnerable there a couple things you should try to get something like a file read or upload.
+If you find these fields are vulnerable there a couple things you should try to get something like a file read or upload. Most importantly, you need to try and determine the exact ``command`` or ``action`` the server is running on your behalf. This will help you determine the ways in which it can be exploited.
 
 ## Exploiting SSRF
 
