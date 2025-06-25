@@ -59,7 +59,17 @@ Lorem
 Lorem
 
 ## Subdomain Brute Forcing
-If we find a vald Domain we also want to try subdomain brute forcing. Whenever you see `port 53` open you want to try this. Can lead to lots of juicy sites.
+
+If we find a vald Domain we also want to try subdomain brute forcing. Whenever you see `port 53` open you want to try this. Can lead to lots of juicy sites. It is important to note any `emails` you might find on a website as that is telling you there is a valid domain.
+
+#### ffuf
+
+`ffuf` is powerful brute forcer that has tons of utility. The follow syntax will brute force subdomains:
+
+```bash
+ffuf -u http://<boxip> -H "Host: FUZZ.box.htb" -w /usr/share/SecLists/Discovery/DNS/subdomains-top1million-20000.txt -mc all -ac
+```
 
 ## VHost Fuzzing
+
 I will be back, need to do more research.
