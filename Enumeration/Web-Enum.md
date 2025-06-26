@@ -78,6 +78,15 @@ I will be back, need to do more research.
 
 It is important to enumerate every technology you find on the site, for example, if you find `WordPress` you should run `WPScan`
 
+#### General Enumeration
+
+When you find a novel technology, it is good to do a couple things:
+- Look up the github for possible default creds and other info
+- Look it up in searcshploit
+- Look up the tech name and version number in google for possible CVE
+
+
+
 #### WPScan
 
 WPScan is great for enumerating and bruteforcing vulnerable WordPress plugins. The following enumerates themes, plugins, and users:
