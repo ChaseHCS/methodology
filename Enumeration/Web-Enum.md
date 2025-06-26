@@ -73,3 +73,20 @@ ffuf -u http://<boxip> -H "Host: FUZZ.box.htb" -w /usr/share/SecLists/Discovery/
 ## VHost Fuzzing
 
 I will be back, need to do more research.
+
+## Tech-Stack Enumeration
+
+It is important to enumerate every technology you find on the site, for example, if you find `WordPress` you should run `WPScan`
+
+#### WPScan
+
+WPScan is great for enumerating and bruteforcing vulnerable WordPress plugins. The following enumerates themes, plugins, and users:
+
+```bash
+wpscan --url <URL> --enumerate p --enumerate t --enumerate u
+```
+The following scan bruteforces default logins:
+
+```bash
+wpscan --url https://192.168.211.148:12380/blogblog/ --disable-tls-checks -P /usr/share/wordlists/seclists/Passwords/Common-Credentials/10-million-password-list-top-1000.txt
+```
