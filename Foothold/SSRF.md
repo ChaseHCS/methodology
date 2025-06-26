@@ -19,3 +19,9 @@ The following command will fuzz all ports:
 ```bash
 ffuf -u http://<box.htb>/<Wherever the HTTP request posts too> -request ssrf.request -w <( seq 0 65535) -ac
 ```
+
+The syntax is as follows:
+- `-u` = Specifies URL
+- `-request` = Specifies the request file you downloaded from burp. NOTE, in that file put :FUZZ behind the IP address where you want `ffuf` to brute.
+- `-w <( seq 0 65535)` = Tells `ffuf` to try all numbers in the seq.
+- `-ac` = Specifies all collection methods.
