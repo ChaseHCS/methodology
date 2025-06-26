@@ -24,4 +24,4 @@ The syntax is as follows:
 - `-u` = Specifies URL
 - `-request` = Specifies the request file you downloaded from burp. NOTE, in that file put :FUZZ behind the IP address where you want `ffuf` to brute.
 - `-w <( seq 0 65535)` = Tells `ffuf` to try all numbers in the seq.
-- `-ac` = Specifies all collection methods.
+- `-ac` = Specifies auto collection.
