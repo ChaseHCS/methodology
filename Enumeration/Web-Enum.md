@@ -52,6 +52,8 @@ The syntax of this cmd is as follows. `-u` specifies url.`--auto-bail` will auto
 
 It is extremely important to be thorough with this step. Try different wordlists, different file extensions, and try them multiple times with different tools. You could literally fail OSCP for simply not bruting the correct wordlist.
 
+Another thing to note is that SecLists has wordlists for certain types of Websites. For ex, there is a word list for `Java Spring Boot`.
+
 #### Gobuster
 Lorem
 
