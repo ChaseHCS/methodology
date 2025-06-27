@@ -1,1 +1,0 @@
-# Exploiting SUID Binaries
