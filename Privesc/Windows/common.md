@@ -1,4 +1,4 @@
-# Most Common PrivEsc Methods
+# Common PrivEsc Methods
 
 Here are some things I do for windows privesc.
 
