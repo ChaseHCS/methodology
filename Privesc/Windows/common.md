@@ -4,7 +4,14 @@ Here are some things I do for windows privesc.
 
 ## Identifying Privesc Vector
 
-First I like installing a `PowerUP` *AND* `winPEAS`. Using these tools will help us find the attack vector `80%` of the time.
+First, (after some basic one-liners) I like installing a `PowerUP` *AND* `winPEAS`. Using these tools will help us find the attack vector `80%` of the time.
+
+### One-Liners
+
+These one-liners will catch a good amount of privesc vectors:
+
+- `whoami /priv` == See your users privs.
+- 
 
 ### winPEAS
 
