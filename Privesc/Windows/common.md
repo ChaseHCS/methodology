@@ -11,9 +11,9 @@ First, (after some basic one-liners) I like installing a `PowerUP` *AND* `winPEA
 These one-liners will catch a good amount of privesc vectors:
 
 - `whoami /priv` == See your users privs.
-- `Get-LocalUser` == See all local users.
-- `Get-LocalGroup` == See all local groups.
-- `Get-LocalGroupMember <juicygroup>` == See members that are apart of a certain group.
+- `Get-LocalUser` **OR** `net user` == See all local users.
+- `Get-LocalGroup` **OR** `net group` == See all local groups.
+- `Get-LocalGroupMember <juicygroup>` **OR** `net localgroup <juicygroup>`== See members that are apart of a certain group.
 
 ### winPEAS
 
