@@ -36,7 +36,7 @@ After stuffing the input fields you should either obtain access to the system as
 
 #### MySQL
 
-```sql
+```txt
 # Get number of columns
 ' ORDER BY 3--
 
