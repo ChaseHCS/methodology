@@ -3,6 +3,7 @@
 #### Refs
 https://github.com/HackTricks-wiki/hacktricks/blob/master/src/pentesting-web/sql-injection/mysql-injection/README.md
 
+#### Main
 SQL Injection is a very common attack vector in the `OSCP` exam. You will most likely see atleast one box where it is the intended attack path. I would recommend to anyone that is unfamiliar with `SQL` to learn the language on a basic level first, and then understanding `SQLI` is way easier. With that being said the first thing you want to do is stuff the input fields with common `SQLI` cmds:
 
 ### Auth Bypass / SQLI Checker
