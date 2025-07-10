@@ -51,6 +51,8 @@ After stuffing the input fields you should either obtain access to the system as
 #### MySQL
 
 ```txt
+### Keep in mind, depending on if you are using Union Based Or Regular SQL Injection, you need to change the commands from UNION ALL SELECT 1,2,<CMD> to SELECT <CMD>
+
 # Get number of columns
 ' ORDER BY 3--
 
