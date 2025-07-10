@@ -113,7 +113,7 @@ Most of the SQLIs you will come across as a beginner will be MySQL. But, in some
 ' SELECT name FROM <db>.sys.objects WHERE type = 'U'
 
 # Get columns
-' SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = '<table>')
+' SELECT name FROM syscolumns WHERE id = (SELECT id FROM sysobjects WHERE name = '<table>') // THIS SYNTAX IS 20 YRS OLD BUT IS STILL COMPATIBLE, MIGHT BE DEPRECATED SOON.
 
 # Dump data
 ' SELECT  <column1>, <column2> from <table>
