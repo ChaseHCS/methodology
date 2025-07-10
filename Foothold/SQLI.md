@@ -93,7 +93,9 @@ After stuffing the input fields you should either obtain access to the system as
 ```
 A couple extra things to keep in mind. `--` comments out the rest of the line. `0x7c` is just ASCII for a pipe. `+` is just url encoding for spaces.
 
+### Other SQL Distros
 
+Most of the SQLIs you will come across as a beginner will be MySQL. But, in some cases, it will be other distributions. For the most part, the syntax is the same depending on the distro. I won't go into every cmd on every distro but will just give an example to extrapolate from.
 
 
 #### MSSQL
