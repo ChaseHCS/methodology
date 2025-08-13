@@ -4,7 +4,7 @@ LFI can be a pretty trivial attack path. The most important thing to note is dif
 
 ## Automation
 
-```bash
+```python
 wfuzz -c -w ./lfi2.txt --hw 0 http://10.10.10.10/nav.php?page=../../../../../../../FUZZ
 ```
 
