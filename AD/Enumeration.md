@@ -1,4 +1,4 @@
-# Active Directory Enumeration
+# Active Directory Enumeration & Exploitation
 
 ## Intial Domain Enum
 
