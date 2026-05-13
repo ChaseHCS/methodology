@@ -39,7 +39,7 @@ bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get writable
 ```
 ### Get juicy user inbound object control
 ```bash
-python dacledit.py "$domain/$domainuser:$domainuserpwd" -dc-ip $dcip -action read -target "john.doe"
+python3 dacledit.py "$domain/$domainuser:$domainuserpwd" -dc-ip $dcip -action read -target "john.doe"
 ```
 
 ### Enum group membership
