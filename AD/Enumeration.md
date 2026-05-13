@@ -2,7 +2,16 @@
 
 ## Local Post-Exploitation
 
+### Initialize env vars
+```bash
+export localadmin=<LOCALADMIN>
+export localadminpwd=<LOCALADMINPASSWORD>
+```
+
 ### Complete machine loot finding
+```bash
+
+```
 
 ### Dump cached pwds and logonpwds
 ```bash
