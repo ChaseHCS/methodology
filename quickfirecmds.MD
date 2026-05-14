@@ -28,3 +28,10 @@ ffuf -w /Seclists -u https://$ip/script.php?valid_name=FUZZ -fc 401
 cd ~/binaries/nikto
 ./nikto.pl -h http://$ip -output nikto
 ```
+
+### WPscan
+```bash
+wpscan --url http://$ip | tee wpscanshallow
+wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
+```
+
