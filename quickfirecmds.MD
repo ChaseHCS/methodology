@@ -19,8 +19,8 @@ ffuf -w ~/Seclists -u https://$ip -H "Host: FUZZ.$ip.oscp" ~/SecLists/Discovery/
 
 ### Parameter fuzzing
 ```bash
-ffuf -w ~/Seclists -u https://$ip/script.php?FUZZ=test_value -fs 4242
-ffuf -w /Seclists -u https://$ip/script.php?valid_name=FUZZ -fc 401
+ffuf -w ~/Seclists -u https://$ip/$file.php?FUZZ=a -fs 4242
+ffuf -w /Seclists -u https://$ip/$file.php?$param=FUZZ -fc 401
 ```
 
 ### Nikto
