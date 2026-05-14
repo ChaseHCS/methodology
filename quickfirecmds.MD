@@ -36,6 +36,28 @@ wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 
 ## Privilege Escalation
 
+### Linux
+```bash
+id
+sudo -l
+crontab -l
+find / -perm -u=s -type f 2>/dev/null
+find / -perm -g=s -type f 2>/dev/null
+grep "CRON" /var/log/syslog OR ls -laht /etc/cron*
+/usr/sbin/getcap -r / 2>/dev/null
+ps aux | grep “root”
+ls -a /etc/passwd
+
+Look through root and all user directories
+Look in /tmp/ – /dev/shm – /var/tmp/ – /opt/ – /srv/ – /var/mail/ – /var/spool/mail/
+Look through /etc for anything that isnt root root, root cups, or root shadow
+Run linpeas if you must
+
+dpkg -l
+lsblk ; mount
+lsmod ; /sbin/modinfo libata
+uname -a ; arch
+```
 ## RCE & LPE Binary Creation
 
 ## Password Bruting
