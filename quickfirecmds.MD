@@ -14,7 +14,7 @@ ffuf -w ~/Seclists/Discovery/Web-Content/raft-large-words.txt -u https://$ip/FUZ
 
 ### VHost fuzzing
 ```bash
-ffuf -w ~/Seclists -u https://$ip -H "Host: FUZZ.$ip.oscp" ~/SecLists/Discovery/DNS/subdomains-top1million-20000.txt  -ac
+ffuf -w ~/Seclists -u https://$ip -H "Host: FUZZ.$ip" ~/SecLists/Discovery/DNS/subdomains-top1million-20000.txt  -ac
 ```
 
 ### Parameter fuzzing
