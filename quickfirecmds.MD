@@ -25,8 +25,7 @@ ffuf -w /Seclists -u https://$ip/script.php?valid_name=FUZZ -fc 401
 
 ### Nikto
 ```bash
-cd ~/binaries/nikto
-./nikto.pl -h http://$ip -output nikto
+~/binaries/nikto.pl -h http://$ip -output nikto
 ```
 
 ### WPscan
@@ -35,3 +34,8 @@ wpscan --url http://$ip | tee wpscanshallow
 wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 ```
 
+## Privilege Escalation
+
+## RCE & LPE Binary Creation
+
+## Password Bruting
