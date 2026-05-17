@@ -2,6 +2,11 @@
 
 `THESE` are all of `MY` quickfire **CMDS**!
 
+## To-Do
+```bash
+find better cmds and methods to find kernel exploits.
+```
+
 ## Web
 
 ### Discovery
