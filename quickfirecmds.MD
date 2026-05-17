@@ -4,6 +4,12 @@
 
 ## Web
 
+### Discovery
+
+```bash
+sudo nmap -sV -sC -sU -p 161 kiero
+```
+
 ### Subdomain fuzzing
 ```bash
 ffuf -w ~/Seclists/Discovery/Web-Content/raft-large-directories.txt -u https://$ip/FUZZ -fc 404 -o ffufdirectories
