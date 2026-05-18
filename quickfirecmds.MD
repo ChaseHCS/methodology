@@ -12,7 +12,8 @@ find better cmds and methods to find kernel exploits.
 ### Discovery
 
 ```bash
-sudo nmap -sV -sC -sU -p 69,111,161 kiero
+fscan $ip
+sudo nmap -sV -sC -sU -p 69,111,161 $ip
 ```
 
 ### Subdomain fuzzing
