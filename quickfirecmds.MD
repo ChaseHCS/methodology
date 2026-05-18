@@ -68,7 +68,7 @@ Run linpeas if you must
 dpkg -l
 lsblk ; mount
 lsmod ; /sbin/modinfo libata
-uname -r
+uname -r ; uname -a
 cat /proc/version
 cat /etc/*release
 ```
