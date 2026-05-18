@@ -7,14 +7,14 @@
 find better cmds and methods to find kernel exploits.
 ```
 
-## Web
-
-### Discovery
+## Discovery
 
 ```bash
 fscan $ip
 sudo nmap -sV -sC -sU -p 69,111,161 $ip
 ```
+
+## Web
 
 ### Subdomain fuzzing
 ```bash
