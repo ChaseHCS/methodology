@@ -68,7 +68,9 @@ Run linpeas if you must
 dpkg -l
 lsblk ; mount
 lsmod ; /sbin/modinfo libata
-uname -a ; arch
+uname -r
+cat /proc/version
+cat /etc/*release
 ```
 
 ### Windows
