@@ -156,7 +156,9 @@ echo "b64encodedoutput" | base64 -d
 
 ### File uploads
 ```bash
+// If PHP is used try uploading a .PHP, .pHP, .phP, .Php, pHp, phps, php7.
 
+// Also try writing over ssh keys in user and root dirs.
 ```
 ### API Abuse
 ```bash
