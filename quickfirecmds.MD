@@ -164,3 +164,9 @@ echo "b64encodedoutput" | base64 -d
 ```bash
 
 ```
+
+## Misc notes
+
+### text4shell
+
+During an OSCP lab I came across an Ubuntu box running Apache Tomcat using the Java Springboot Framework. I realized pretty quickly during enum that it was vulnerable to the `text4shell` exploit. It is essentially blind os cmd injection via crafted GET request.
