@@ -169,4 +169,4 @@ echo "b64encodedoutput" | base64 -d
 
 ### text4shell
 
-During an OSCP lab I came across an Ubuntu box running Apache Tomcat using the Java Springboot Framework. I realized pretty quickly during enum that it was vulnerable to the `text4shell` exploit. It is essentially blind os cmd injection via crafted GET request.
+During an OSCP lab I came across an Ubuntu box running Apache Tomcat using the Java Springboot Framework. I realized pretty quickly during enum that it was vulnerable to the `text4shell` exploit. It is essentially blind os cmd injection via crafted GET request. A problem arrised when I attempted to drop my revshell one liner into the `exec()` java function. It didn't work despite url encoding the entire string. So I tried a simpler string to test for code exec *that claude gave me* and my http server got a request! So what was going on????
