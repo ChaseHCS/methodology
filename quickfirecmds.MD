@@ -166,10 +166,7 @@ echo "b64encodedoutput" | base64 -d
 ```bash
 
 ```
-### Working within restricted shells or with restricted command execution
-```bash
 
-```
 
 ## Misc notes
 
@@ -181,3 +178,7 @@ During an OSCP lab I came across an Ubuntu box running Apache Tomcat using the J
 ```txt
 Don't assume dropping shellcode into an exec() function will just implicitly run. Especially in different web frameworks. You must think about the use of chars like :, /, |, etc and how they will be handled.
 ```
+
+### RCE
+
+Recently I discovered that `rce` is literally never as easy is just copy pasting a revshell into an exec() function and calling it a day. In most cases (including in OSCP) rce has several hurdles you might have jump in order to get a shell or get a file read.
