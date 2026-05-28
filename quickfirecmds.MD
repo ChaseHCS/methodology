@@ -164,6 +164,10 @@ echo "b64encodedoutput" | base64 -d
 ```bash
 
 ```
+### Working within restricted shells or with restricted command execution
+```bash
+
+```
 
 ## Misc notes
 
