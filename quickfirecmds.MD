@@ -60,7 +60,9 @@ find / -perm -g=s -type f 2>/dev/null
 grep "CRON" /var/log/syslog
 ls -laht /etc/cron*
 /usr/sbin/getcap -r / 2>/dev/null
-ps aux | grep “root”
+ps aux
+netstat -tulnp
+ss -anp
 ls -a /etc/passwd
 
 \\ Look through root and all user directories
