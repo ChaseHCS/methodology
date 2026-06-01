@@ -18,7 +18,7 @@ sudo nmap -sV -sC -sU -p 69,111,161 $ip
 
 ## Web
 
-### Subdomain fuzzing
+### Subdirectory fuzzing
 ```bash
 ffuf -w ~/Seclists/Discovery/Web-Content/raft-large-directories.txt -u https://$ip/FUZZ -fc 404 -o ffufdirectories
 ffuf -w ~/Seclists/Discovery/Web-Content/raft-large-words.txt -u https://$ip/FUZZ -fc 404 -o ffufwords
@@ -181,4 +181,4 @@ Don't assume dropping shellcode into an exec() function will just implicitly run
 
 ### RCE
 
-Recently I discovered that `rce` is literally never as easy is just copy pasting a revshell into an exec() function and calling it a day. In most cases (including in OSCP) rce has several hurdles you might have jump in order to get a shell or get a file read.
+Recently I discovered that `rce` is literally never as easy is just copy pasting a revshell into an exec() function and calling it a day. In most cases (including in OSCP) rce has several hurdles you might have jump in order to get a shell or get a file read. For example, in most cases you have RCE via `exec()` function. These functions handle input and CE differently depending on the language or web framework used. Some of them can handle and open an interfactive nc shell while others cant. Therefore, it is best to attempt to determine what is allowing for the RCE before just jamming cmds in. Furthermore, many victim machines have firewalls blocklisting outbound over most ports.
