@@ -95,8 +95,9 @@ netstat -ano
 wmic service get name,pathname,startmode | findstr /i "Auto" | findstr /i /v "C:\Windows\\"
 schtasks /query /fo LIST /v | findstr /i /c:"TaskName:" /c:"Task To Run:"
 schtasks /run /tn "path\to\taskname"
-"HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select Displayname
+Get-ItemProperty "HKLM:\SOFTWARE\Wow6432Node\Microsoft\Windows\CurrentVersion\Uninstall\*" | select Displayname
 Get-CimInstance -Class win32_quickfixengineering | Where-Object { $_.Description -eq "Security Update" }
+Get-CimInstance -ClassName win32_service | Select Name,State,PathName | Where-Object {$_.State -like 'Running'}
 
 // Niche
 
