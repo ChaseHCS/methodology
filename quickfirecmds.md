@@ -71,9 +71,12 @@ ls -a /etc/passwd
 \\ Run linpeas if you must
 
 dpkg -l
-lsblk ; mount
-lsmod ; /sbin/modinfo libata
-uname -r ; uname -a
+lsblk
+mount
+lsmod
+/sbin/modinfo libata
+uname -r
+uname -a
 cat /proc/version
 cat /etc/*release
 ```
