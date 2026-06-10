@@ -203,3 +203,4 @@ When a zipping binary zips a directory it appends an empty directory tree to the
 
 ### Cross-compiling c code between compiler versions
 
+During a recent OSCP lab I discovered that `gcc` has a flag to statically link your standard library into the binary itself allowing it to run on any machine with zero dependencies. `What is the trade-off?`, it significantly increases the file size and might throw errors for some functions that don't like being statically linked.
