@@ -192,3 +192,14 @@ Don't assume dropping shellcode into an exec() function will just implicitly run
 ### RCE
 
 Recently I discovered that `rce` is literally never as easy is just copy pasting a revshell into an exec() function and calling it a day. In most cases (including in OSCP) rce has several hurdles you might have jump in order to get a shell or get a file read. For example, in most cases you have RCE via `exec()` function. These functions handle input and CE differently depending on the language or web framework used. Some of them can handle and open an interfactive nc shell while others cant. Therefore, it is best to attempt to determine what is allowing for the RCE before just jamming cmds in. Furthermore, many victim machines have firewalls blocklisting outbound over most ports.
+
+### File zipping
+
+In a recent lab I discovered that a folders directory tree `never` gets zipped, when getting zipped! So if a `password-protected` zip gets unzipped, it will let you do it! `unzip` will just give you the directory tree with no other data. It is important to clock this when you see it to avoid missing out on potential loot. 
+
+**What is happening under the hood**
+
+When a zipping binary zips a directory it appends an empty directory tree to the file, but why? Apparently it was a strategic design decision to optimize performance, `why would have to decrypt the entire directory if the user just needed one file from one folder` was the question asked. And this by and large makes sense!
+
+### Cross-compiling c code between compiler versions
+
