@@ -76,7 +76,7 @@ dpkg -l
 lsblk
 mount
 lsmod
-/sbin/modinfo libata
+/sbin/modinfo <VULNDEVICEDRIVER>
 uname -r
 uname -a
 cat /proc/version
