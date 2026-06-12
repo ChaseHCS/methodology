@@ -64,6 +64,7 @@ ps aux
 netstat -tulnp
 ss -anp
 ls -a /etc/passwd
+cat /etc/iptables/rules.v4
 
 \\ Look through root and all user directories
 \\ Look in /tmp/ – /dev/shm – /var/tmp/ – /opt/ – /srv/ – /var/mail/ – /var/spool/mail/
