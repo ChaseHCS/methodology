@@ -57,6 +57,7 @@ sudo -l
 crontab -l
 find / -perm -u=s -type f 2>/dev/null
 find / -perm -g=s -type f 2>/dev/null
+find / -writable -type d 2>/dev/null
 grep "CRON" /var/log/syslog
 ls -laht /etc/cron*
 /usr/sbin/getcap -r / 2>/dev/null
