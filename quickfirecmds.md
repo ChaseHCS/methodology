@@ -207,3 +207,12 @@ When a zipping binary zips a directory it appends an empty directory tree to the
 ### Cross-compiling c code between compiler versions
 
 During a recent OSCP lab I discovered that `gcc` has a flag to statically link your standard library into the binary itself allowing it to run on any machine with zero dependencies. `What is the trade-off?`, it significantly increases the file size and might throw errors for some functions that don't like being statically linked.
+
+### Writable /etc/passwd
+
+To exploit a writable `etc/passwd` file first you need to know how the file works. It was the original place where passwords were hidden but password hashes have since moved to `/etc/shadow`. But, for backwards compatibility, any hashes in `/etc/passwd` will take precedence over shadow. This means that if we have write on passwd we can just arbitrarily change anyones passwd, we can even make new root users if we would like. To exploit this we need to know that linux typically uses the `crypt` hashing algo. A simple oneliner to exploit this uses the `openssl` binary. We can then just echo the string to the bottom of the `/etc/passwd` file.
+
+```bash
+openssl passwd w00t
+echo "root2:Fdzt.eqJQ4s0g:0:0:root:/root:/bin/bash" >> /etc/passwd
+```
