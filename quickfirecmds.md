@@ -54,7 +54,7 @@ wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 
 ```
 
-### nxc
+### NXC
 ```bash
 
 ```
