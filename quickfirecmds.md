@@ -49,15 +49,47 @@ wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 ```
 ## Active Directory
 
-### Local Post-Exploitation
+### God-potato
 ```bash
 
 ```
 
-### AD Enumeration
+### nxc
 ```bash
 
 ```
+
+### Ligolo
+```bash
+
+```
+
+### Certutil
+```bash
+
+```
+
+### Mimikatz
+```bash
+
+```
+
+### BloodyAD
+```bash
+
+```
+
+### Bloodhound
+```bash
+
+```
+
+### Post-Exploit One-Liners
+```bash
+
+```
+
+### 
 ## Privilege Escalation
 
 ### Linux
