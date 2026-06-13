@@ -177,7 +177,11 @@ Get-ChildItem -Path C:\Users\dave\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.doc
 ### John
 
 ```bash
-
+john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt
+john --show hash.txt
+zip2john secret.zip > ziphash.txt && john --wordlist=rockyou.txt ziphash.txt
+keepass2john Database.kdbx > kphash.txt && john --wordlist=rockyou.txt kphash.txt
+pdf2john document.pdf > pdfhash.txt && john --wordlist=rockyou.txt pdfhash.txt
 ```
 
 ### HTTP Post bruting
