@@ -47,7 +47,17 @@ ffuf -w /Seclists -u https://$ip/$file.php?$param=FUZZ -fc 401
 wpscan --url http://$ip | tee wpscanshallow
 wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 ```
+## Active Directory
 
+### Local Post-Exploitation
+```bash
+
+```
+
+### AD Enumeration
+```bash
+
+```
 ## Privilege Escalation
 
 ### Linux
