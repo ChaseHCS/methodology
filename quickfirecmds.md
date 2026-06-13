@@ -173,6 +173,13 @@ Get-ChildItem -Path C:\Users\dave\ -Include *.txt,*.pdf,*.xls,*.xlsx,*.doc,*.doc
 
 ## Password Bruting
 
+
+### John
+
+```bash
+
+```
+
 ### HTTP Post bruting
 ```bash
 ffuf -w $user:USER -w /usr/share/wordlists/rockyou.txt:PASS \ 
