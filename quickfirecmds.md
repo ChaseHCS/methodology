@@ -267,11 +267,23 @@ echo "b64encodedoutput" | base64 -d
 
 // Also try writing over ssh keys in user and root dirs.
 ```
+
 ### API Abuse
 ```bash
 
 ```
 
+### SQLI
+```bash
+select version();
+select system_user();
+show databases;
+SELECT user, authentication_string FROM mysql.user WHERE user = 'offsec';
+
+SELECT @@version;
+SELECT name FROM sys.databases;
+SELECT * FROM offsec.information_schema.tables;
+```
 
 ## Misc notes
 
