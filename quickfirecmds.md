@@ -294,7 +294,7 @@ echo "b64encodedoutput" | base64 -d
 
 ### API Abuse
 ```bash
-
+ffuf -w /usr/share/seclists/Discovery/Web-Content/api/api-endpoints.txt -u http://10.10.X.X/api/FUZZ -mc all -fc 404
 ```
 
 ### SQLI
